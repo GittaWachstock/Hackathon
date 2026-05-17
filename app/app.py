@@ -7,13 +7,14 @@ import re
 # CONFIG
 # =============================
 
-OPENAI_API_KEY = "YOUR_API_KEY"
+OPENAI_API_KEY = "sk-safeai-718385e2f6a890d823acc3360d7ac4560d4b494ab1694902"
 
 DB_CONFIG = {
-    "host": "localhost",
-    "database": "mydb",
-    "user": "postgres",
-    "password": "1234"
+    "host": "postgres",
+    "port": 5432,
+    "database": "sampledb",
+    "user": "admin",
+    "password": "admin123"
 }
 
 MODEL = "gpt-4.1"
