@@ -4,8 +4,6 @@ services:
 
   postgres:
     image: postgres:16
-    container_name: ai_sql_db
-    restart: always
 
     environment:
       POSTGRES_USER: admin
@@ -16,8 +14,16 @@ services:
       - "5432:5432"
 
     volumes:
-      - postgres_data:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-volumes:
-  postgres_data:
+  app:
+    build: .
+
+    depends_on:
+      - postgres
+
+    environment:
+      DATABASE_URL: postgresql://admin:admin123@postgres:5432/sampledb
+
+    volumes:
+      - .:/app
