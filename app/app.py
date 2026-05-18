@@ -227,8 +227,7 @@ def run_agent(user_input):
 # =============================
 
 if __name__ == "__main__":
-    user_input = input("Enter request: ")
-
+    user_input = "show all customers"
     result = run_agent(user_input)
 
     print(json.dumps(result, indent=2, default=str))

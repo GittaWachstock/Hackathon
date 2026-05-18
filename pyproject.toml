@@ -9,10 +9,16 @@ dependencies = [
     "psycopg2-binary>=2.9.9",
     "openai>=1.30.0",
     "python-dotenv>=1.0.1",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "black",
     "ruff",
 ]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

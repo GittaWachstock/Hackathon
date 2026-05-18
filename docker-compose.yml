@@ -22,8 +22,11 @@ services:
     depends_on:
       - postgres
 
+    ports:
+      - "8000:8000"
+
     environment:
-      DATABASE_URL: postgresql://admin:admin123@postgres:5432/sampledb
+      OPENAI_API_KEY: sk-xxxxx
 
     volumes:
       - .:/app
